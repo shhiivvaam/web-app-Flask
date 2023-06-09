@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
-</head>
-<body>
-    <p> some content </p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block main %}
+
+<h1>Task</h1>
+<ul>
+    {% for task in tasks %}
+        <li>{{ task.titile }} created on {{ task.date }} </li>
+    \{% endfor %}
+</ul>
