@@ -1,9 +1,27 @@
 {% extends "base.html" %}
-{% block main %}
 
+{% block main %}
+<!-- <p>Index</p> -->
+{% for task in tasks %}
+<div class="card">
+    <div class="card-body">
+        <h3>{{ task.title }}</h3>
+        <p>Added on {{ task.date }}</p>
+
+        <a href="{{ url_for('edit', task_id = task.id) }}" class = "btn btn-primary">Edit</a>
+        <a href="{{ url_for('delete', task_id = task.id) }}" class="btn btn-primary">Delete</a>
+        <!-- <a href="#" class="btn btn-danger">Edit</a> --> -->
+        <!-- <a href="{{ url for('edit', task id = task.id) }}" class="btn btn-primary">Edit</a>
+        <a href="{{ url for('delete', task id = task.id) }}" class="btn btn-danger">Edit</a> -->
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+<!--
 <h1>Task</h1>
 <ul>
     {% for task in tasks %}
         <li>{{ task.titile }} created on {{ task.date }} </li>
-    \{% endfor %}
-</ul>
+    {% endfor %}
+</ul> -->

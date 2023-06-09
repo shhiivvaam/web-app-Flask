@@ -1,4 +1,30 @@
 {% extends "base.html" %}
+{% block main %}
+
+<div class="container-fluid">
+    <form action = "{{ url_for('add') }}" method = "post">
+        {{ form.hidden_tag() }}
+        <div class="row">
+            <h3>Add Task</h3>
+            <div class="col">
+                {{ form.title(class = "form-control") }}
+            </div>
+            <div class="col">
+                {{ form.submit(class = 'btn btn-primary') }}
+            </div>
+        </div>
+        <!-- {{ form.title }}
+        {{ form.submit }} -->
+    </form>
+</div>
+{% endblock %}
+
+
+
+
+
+
+<!-- {% extends "base.html" %}
 
 {% block main %}
 <p>Some content on the page!</p>
@@ -11,4 +37,4 @@
 {% if title %}
     <h1>{{ title }}</h1>
 {% endif %}
-{% endblock %}
+{% endblock %} -->
